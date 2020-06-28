@@ -41,11 +41,50 @@ as needed for your country.
 
 Finish and Reboot
 
+Setup a New User
+----------------
+
+If you have another PC connected to a LAN you can now work from that PC via SSH.
+If not then you will have to do this on the Rpi.
+
+Log in as user pi with the password raspberry
+::
+
+  ssh pi@192.168.x.xxx replace x's with your Rpi's address
+  sudo adduser pia
+
+set the password and press enter until you get the is this correct then y
+
+Allow the new user to run sudo by adding the user to sudo group:
+::
+
+  sudo adduser pia sudo
+
+Reboot the Rpi
+::
+
+  sudo reboot
+
+On the Rpi log in as pia with your password
+
 
 
 Install OpenBox
 ---------------
 
+Update the repositories
 ::
 
   sudo apt update
+
+Install Xorg and Xinit
+::
+
+  sudo apt install --no-install-recommends xserver-xorg xinit
+
+Install Openbox LXTerminal LightDM
+::
+
+  sudo apt install openbox lxterminal lightdm
+
+
