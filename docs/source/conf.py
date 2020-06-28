@@ -19,8 +19,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u'7i96'
-copyright = u'2019, John Thornton'
+project = u'Raspberry Pi'
+copyright = u'2020, John Thornton'
 author = u'John Thornton'
 
 # The short X.Y version
