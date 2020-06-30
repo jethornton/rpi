@@ -95,16 +95,23 @@ Reboot the Rpi
 
 On the Rpi log in as your new user name
 
-ssh back in as john
-ssh 192.168.n.nnn
+If your doing this from another PC ssh back in as you by just using the IP address
+::
+
+  ssh 192.168.n.nnn
 
 Delete temporary user and folder
-sudo deluser pia
-sudo rm -r /home/pia
+::
 
-sudo apt update
-sudo apt dist-upgrade
-sudo apt clean
+  sudo deluser pia
+  sudo rm -r /home/pia
+
+Update everything
+::
+
+  sudo apt update
+  sudo apt dist-upgrade
+  sudo apt clean
 
 Install OpenBox
 ---------------
