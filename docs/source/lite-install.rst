@@ -79,6 +79,7 @@ sudo usermod -l newUsername oldUsername
   sudo usermod -l john pi
 
 Change the home directory name to your name again for me it's john
+
 sudo usermod -d /home/newHomeDir -m newUsername
 ::
 
@@ -96,7 +97,8 @@ Reboot the Rpi
 
 On the Rpi log in as your new user name
 
-If your doing this from another PC ssh back in as you by just using the IP address
+If your doing this from another Linux PC with the same user name ssh back in as
+you by just using the IP address
 ::
 
   ssh 192.168.n.nnn
