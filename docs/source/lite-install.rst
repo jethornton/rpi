@@ -91,6 +91,7 @@ Update the password to your favorite password
 
 Reboot the Rpi
 ::
+
   sudo reboot
 
 On the Rpi log in as your new user name
