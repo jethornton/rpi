@@ -50,7 +50,7 @@ If not then you will have to do this on the Rpi.
 Log in as user pi with the password raspberry
 ::
 
-  ssh pi@192.168.x.xxx replace x's with your Rpi's address
+  ssh pi@192.168.n.nnn replace n's with your Rpi's address
   sudo adduser pia
 
 set the password and press enter until you get the is this correct then y
@@ -67,7 +67,44 @@ Reboot the Rpi
 
 On the Rpi log in as pia with your password
 
+If your doing this from another PC ssh back in as pia
+::
 
+  ssh pia@192.168.n.nnn
+
+Change the user name of pi to your user name in my case it's john
+sudo usermod -l newUsername oldUsername
+::
+
+  sudo usermod -l john pi
+
+Change the home directory name to your name again for me it's john
+sudo usermod -d /home/newHomeDir -m newUsername
+::
+
+  sudo usermod -d /home/john -m john
+
+Update the password to your favorite password
+::
+
+  sudo passwd john
+
+Reboot the Rpi
+::
+  sudo reboot
+
+On the Rpi log in as your new user name
+
+ssh back in as john
+ssh 192.168.n.nnn
+
+Delete temporary user and folder
+sudo deluser pia
+sudo rm -r /home/pia
+
+sudo apt update
+sudo apt dist-upgrade
+sudo apt clean
 
 Install OpenBox
 ---------------
