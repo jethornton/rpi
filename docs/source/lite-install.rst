@@ -139,7 +139,7 @@ Setup auto login
 
   sudo nano /etc/lightdm/lightdm.conf
 
-Scroll down to the section [Seat:*] and change these two lines
+Scroll down to the section [Seat:\*] and change these two lines
 ::
 
   #autologin-user=
