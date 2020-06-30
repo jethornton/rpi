@@ -155,4 +155,12 @@ Install the OpenBox menu configuration tool which must be ran on the Rpi4 and no
 
   sudo apt install obmenu
 
+Finally reboot and the Rpi should log you in automaticly.
+::
 
+  sudo reboot
+
+After the reboot you will be at a completly blank screen if your logged in.
+
+Right click and the menu pops up. Press Ctrl + Alt + Right or Left Arrow keys
+to switch desktops.
