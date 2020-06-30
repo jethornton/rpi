@@ -134,4 +134,25 @@ Install Openbox LXTerminal LightDM
 
   sudo apt install openbox lxterminal lightdm
 
+Setup auto login
+::
+
+  sudo nano /etc/lightdm/lightdm.conf
+
+Scroll down to the section [Seat:*] and change these two lines
+::
+
+  #autologin-user=
+  #autologin-user-timeout=0
+
+  autologin-user=your user name
+  autologin-user-timeout=0
+
+Ctrl x then y then enter to save
+
+Install the OpenBox menu configuration tool which must be ran on the Rpi4 and not from SSH
+::
+
+  sudo apt install obmenu
+
 
