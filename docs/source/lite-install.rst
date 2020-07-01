@@ -161,6 +161,25 @@ directory
 
   mkdir bin
 
+
+Add bin to the path by opening up .bashrc with nano
+::
+
+  nano .bashrc
+
+Add the following to the endof .bashrc
+::
+
+  # set PATH so it includes user's private bin if it exists
+  if [ -d "$HOME/bin" ] ; then
+      PATH="$HOME/bin:$PATH"
+  fi
+
+  # set PATH so it includes user's private bin if it exists
+  if [ -d "$HOME/.local/bin" ] ; then
+      PATH="$HOME/.local/bin:$PATH"
+  fi
+
 Finally reboot and the Rpi should log you in automaticly.
 ::
 

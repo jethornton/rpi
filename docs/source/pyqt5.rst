@@ -37,4 +37,14 @@ simple.py
   if __name__ == '__main__':
       main()
 
+Now we must make the file executable by setting the 
+'file permissions <https://www.washington.edu/computing/unix/permissions.html>_`
+with chmod. Note the ~ is short hand for the users home directory.
+::
 
+  chmod u=rwx ~/bin/simple.py
+
+Now we can test that the file permissions have been set with the ls command.
+::
+
+  ls -lg ~/bin/simple.py
