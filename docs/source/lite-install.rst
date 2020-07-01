@@ -155,6 +155,12 @@ Install the OpenBox menu configuration tool which must be ran on the Rpi4 and no
 
   sudo apt install obmenu
 
+Add a user bin directory for executable files, make sure your in your home
+directory
+::
+
+  mkdir bin
+
 Finally reboot and the Rpi should log you in automaticly.
 ::
 

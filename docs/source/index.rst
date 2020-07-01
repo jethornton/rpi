@@ -8,11 +8,16 @@ Raspberry Pi Configuration
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
+   :caption: Operating Systems:
 
    install
    lite-install
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Software:
+
+   pyqt5
 
 Indices and tables
 ==================
