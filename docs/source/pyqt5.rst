@@ -12,6 +12,11 @@ Install in a terminal
 To test the installation create this simple program in your bin directory
 ::
 
+  nano ~/bin/simple.py
+
+simple.py
+::
+
   #!/usr/bin/python3
 
   import sys
