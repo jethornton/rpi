@@ -168,5 +168,12 @@ Finally reboot and the Rpi should log you in automaticly.
 
 After the reboot you will be at a completly blank screen if your logged in.
 
+Either open a terminal or SSH into the Rpi and test that you have the path set
+to include your bin directory. Look for /home/your name/bin.
+::
+
+  echo $PATH
+  /home/john/bin:/usr/local/sbin:... lots of paths
+
 Right click and the menu pops up. Press Ctrl + Alt + Right or Left Arrow keys
 to switch desktops.
