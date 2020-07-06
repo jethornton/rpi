@@ -48,3 +48,9 @@ Now we can test that the file permissions have been set with the ls command.
 ::
 
   ls -lg ~/bin/simple.py
+
+To execut the file you must do that on the Rpi. Right click and select Terminal
+Emulator.
+::
+
+  simple.py
