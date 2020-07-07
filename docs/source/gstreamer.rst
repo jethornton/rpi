@@ -8,6 +8,7 @@ Install the gstreamer libraries
 ::
 
   sudo apt install libgstreamer1.0-0
+  sudo apt install gstreamer1.0-tools
   sudo apt install gstreamer1.0-plugins-base
   sudo apt install gstreamer1.0-plugins-good
   sudo apt install gstreamer1.0-plugins-bad
@@ -67,4 +68,28 @@ Test the speakers are set to default with the built in speaker-test.
 ::
 
   speaker-test -c2 -t wav -l2
+
+Make a directory and copy a mp3 file into it.
+::
+
+  mkdir music
+
+Copy some mp3 files to the music directory, I use Filezilla to copy from PC to
+PC on my LAN.
+::
+
+  sudo apt install filezilla
+
+Now we can test Gstreamer out at the command line to make sure everything is ok.
+You must use the full path to the mp3 file.
+::
+
+  gst-launch-1.0 playbin uri=file:///home/john/music/Alabam.mp3
+
+Note, if the file name has spaces you must enclose the entire path in quotes
+like this
+::
+
+  gst-launch-1.0 playbin uri=file://"/home/john/music/All Along The Watchtower.mp3"
+
 

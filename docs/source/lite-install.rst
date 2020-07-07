@@ -223,6 +223,12 @@ Add the following to the end of .bashrc (right click then paste)
 
 Ctrl x then y then enter to save
 
+While we are cleaning up lets delete all the empty directories with
+::
+
+  find . -type d -empty -delete
+
+
 Finally reboot and the Rpi should log you in automaticly.
 ::
 
