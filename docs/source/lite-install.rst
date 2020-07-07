@@ -10,7 +10,8 @@ Burn the image to the SD card with `balenaEtcher <https://www.balena.io/etcher/>
 
 Insert the SD card and connect a mouse, keyboard and monitor to the Raspberry Pi
 and boot up. After the screen stops scrolling you will need to log in. The user
-name is `pi` and the password is `raspberry`.
+name is `pi` and the password is `raspberry`. At this point you have an
+Operating System (OS) but nothing else.
 
 Setting up the Raspberry Pi OS
 ------------------------------
@@ -24,13 +25,16 @@ Use the Up/Down arrow keys to move in a menu and the tab key to move between
 menus and the spacebar to select options. The following are for the US, adjust
 as needed for your country.
 
+2 Network Options
+  * Hostname set the name you want to be visible on the LAN
+
 1 Localisation Options
   * Change Locale to `en_US ISO8859-1` tab to Ok and press Enter
   * Default Locale `en_US` tab to Ok and press Enter
 
-2 Time Zone select US then your time zone.
+  * Time Zone, Select US then your time zone.
 
-3 Change WLAN Country to your US
+  * Change WLAN Country to US
 
 4 Interfacing Options Enable the following
   * SSH
@@ -44,10 +48,13 @@ Finish and Reboot
 Setup a New User
 ----------------
 
-If you have another PC connected to a LAN you can now work from that PC via SSH.
-If not then you will have to do this on the Rpi.
+At the Rpi log in as user pi with the password raspberry
 
-Log in as user pi with the password raspberry
+
+If you have another PC connected to a LAN you can now work from that PC via SSH.
+At the Rpi type in `ifconfig` to find out the IP address of the Rpi.
+
+If not using SSH then you will have to do this on the Rpi.
 ::
 
   ssh pi@192.168.n.nnn replace n's with your Rpi's address
@@ -67,7 +74,7 @@ Reboot the Rpi
 
 On the Rpi log in as pia with your password
 
-If your doing this from another PC ssh back in as pia
+If your doing this from another PC on the LAN ssh back in as pia
 ::
 
   ssh pia@192.168.n.nnn
@@ -116,13 +123,47 @@ Update everything
   sudo apt dist-upgrade
   sudo apt clean
 
+At this point we have an up to date OS with nothing else.
+
+Static IP Address
+-----------------
+
+If you want to have the same IP address on the Rpi
+
+Find the IP of the router with
+::
+
+  ip r | grep defaultv
+  default via 192.168.1.1 dev enp5s0 proto dhcp metric 100 
+
+Now edit dhcpcd.conf
+::
+
+  sudo nano /etc/dhcpcd.conf
+
+Change the following lines to the address you want and remove the #
+::
+
+  # Example static IP configuration:
+  #interface eth0
+  #static ip_address=192.168.0.10/24
+  #static ip6_address=fd51:42f8:caae:d92e::ff/64
+  #static routers=192.168.0.1
+  #static domain_name_servers=192.168.0.1 8.8.8.8 fd51:42f8:caae:d92e::1
+
+  # Example static IP configuration:
+  interface eth0
+  static ip_address=192.168.1.135/24
+  #static ip6_address=fd51:42f8:caae:d92e::ff/64
+  static routers=192.168.1.1
+  #static domain_name_servers=192.168.0.1 8.8.8.8 fd51:42f8:caae:d92e::1
+
+Ctrl x then y then enter to save. Reboot to apply and log back in at the Rpi.
+
 Install OpenBox
 ---------------
 
-Update the repositories
-::
-
-  sudo apt update
+From either a SSH connection or on the Rpi.
 
 Install Xorg and Xinit
 ::
@@ -167,7 +208,7 @@ Add bin to the path by opening up .bashrc with nano
 
   nano .bashrc
 
-Add the following to the endof .bashrc
+Add the following to the end of .bashrc (right click then paste)
 ::
 
   # set PATH so it includes user's private bin if it exists
@@ -180,6 +221,8 @@ Add the following to the endof .bashrc
       PATH="$HOME/.local/bin:$PATH"
   fi
 
+Ctrl x then y then enter to save
+
 Finally reboot and the Rpi should log you in automaticly.
 ::
 
@@ -187,8 +230,8 @@ Finally reboot and the Rpi should log you in automaticly.
 
 After the reboot you will be at a completly blank screen if your logged in.
 
-Either open a terminal or SSH into the Rpi and test that you have the path set
-to include your bin directory. Look for /home/your name/bin.
+Right click in the Rpi to open a terminal and test that you have the path set
+to include your bin directory. Look for /home/your name/bin in the path
 ::
 
   echo $PATH

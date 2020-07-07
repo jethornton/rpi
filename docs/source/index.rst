@@ -18,6 +18,7 @@ Raspberry Pi Configuration
    :caption: Software:
 
    pyqt5
+   gstreamer
 
 Indices and tables
 ==================
