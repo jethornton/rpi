@@ -2,9 +2,9 @@
 Gstreamer
 =========
 
-To play a mp3 file on the Rpi gstreamer seems to be the best option.
+To play a mp3 file on the Rpi Gstreamer seems to be the best option.
 
-Install the gstreamer libraries
+Install the Gstreamer libraries
 ::
 
   sudo apt install libgstreamer1.0-0
@@ -41,7 +41,7 @@ Check sound hardware
   3 [AUDIO          ]: USB-Audio - USB  AUDIO
                     USB  AUDIO at usb-3f980000.usb-1.1.2, full speed
 
-We don't want to use the bcm2835 ALSA module so disable it in the boot.config.
+We don't want the bcm2835 ALSA module to be default so disable it in the boot.config.
 ::
 
   sudo nano /boot/config.txt
@@ -80,7 +80,7 @@ PC on my LAN.
 
   sudo apt install filezilla
 
-Now we can test Gstreamer out at the command line to make sure everything is ok.
+Now we can test Gstreamer out to make sure everything is ok.
 You must use the full path to the mp3 file.
 ::
 
