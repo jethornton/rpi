@@ -133,7 +133,7 @@ If you want to have the same IP address on the Rpi
 Find the IP of the router with
 ::
 
-  ip r | grep defaultv
+  ip r | grep default
   default via 192.168.1.1 dev enp5s0 proto dhcp metric 100 
 
 Now edit dhcpcd.conf

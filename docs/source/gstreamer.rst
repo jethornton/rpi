@@ -8,6 +8,7 @@ Install the Gstreamer libraries
 ::
 
   sudo apt install libgstreamer1.0-0
+  sudo apt install gstreamer-1.0
   sudo apt install gstreamer1.0-tools
   sudo apt install gstreamer1.0-plugins-base
   sudo apt install gstreamer1.0-plugins-good
@@ -92,4 +93,8 @@ like this
 
   gst-launch-1.0 playbin uri=file://"/home/john/music/All Along The Watchtower.mp3"
 
+Install PyQt5 then gi to run the following test program
+::
+
+  sudo apt install python3-gi
 
