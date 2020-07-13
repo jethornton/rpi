@@ -8,6 +8,28 @@ image.
 
 Burn the image to the SD card with `balenaEtcher <https://www.balena.io/etcher/>`_
 
+
+If your using a Debian based OS you can install and have it on the menu.
+
+* Add Etcher debian repository
+
+::
+
+  echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
+
+* Trust Bintray.com's GPG key
+
+::
+
+  sudo apt-key adv --keyserver hkps://keyserver.ubuntu.com:443 --recv-keys 379CE192D401AB61
+
+* Update and install
+
+::
+
+  sudo apt-get update
+  sudo apt-get install balena-etcher-electron
+
 Insert the SD card and connect a mouse, keyboard and monitor to the Raspberry Pi
 and boot up. After the screen stops scrolling you will need to log in. The user
 name is `pi` and the password is `raspberry`. At this point you have an
@@ -45,11 +67,10 @@ as needed for your country.
 
 Finish and Reboot
 
-Setup a New User
-----------------
+Setup the User
+--------------
 
 At the Rpi log in as user pi with the password raspberry
-
 
 If you have another PC connected to a LAN you can now work from that PC via SSH.
 At the Rpi type in `ifconfig` to find out the IP address of the Rpi.
@@ -165,10 +186,10 @@ Install OpenBox
 
 From either a SSH connection or on the Rpi.
 
-Install Xorg and Xinit
+Install Xorg, Xinit and X11 Utilities
 ::
 
-  sudo apt install --no-install-recommends xserver-xorg xinit
+  sudo apt install --no-install-recommends xserver-xorg xinit x11-xserver-utils
 
 Install Openbox LXTerminal LightDM
 ::
@@ -195,6 +216,19 @@ Install the OpenBox menu configuration tool which must be ran on the Rpi4 and no
 ::
 
   sudo apt install obmenu
+
+Remove any unused packages with
+::
+
+  sudo apt update
+  sudo apt autoremove
+  sudo apt clean
+
+While we are cleaning up lets delete all the empty directories with
+::
+
+  find . -type d -empty -delete
+
 
 Add a user bin directory for executable files, make sure your in your home
 directory
@@ -223,12 +257,6 @@ Add the following to the end of .bashrc (right click then paste)
 
 Ctrl x then y then enter to save
 
-While we are cleaning up lets delete all the empty directories with
-::
-
-  find . -type d -empty -delete
-
-
 Finally reboot and the Rpi should log you in automaticly.
 ::
 
@@ -245,3 +273,63 @@ to include your bin directory. Look for /home/your name/bin in the path
 
 Right click and the menu pops up. Press Ctrl + Alt + Right or Left Arrow keys
 to switch desktops.
+
+Turn off screen blanking by X11
+On the Rpi issue the following command
+::
+
+  xset -dpms s off
+
+To turn off screen blanking
+
+Edit the autostart file
+::
+
+  sudo nano /etc/xdg/openbox/autostart
+::
+
+  mkdir ~/.config/openbox
+  nano ~/.config/openbox/environment
+
+Put the following in the environment file
+::
+
+ xset -dpms s off &
+
+Create .config/openbox/autostart containing:
+::
+
+  # Disable screen saver/screen blanking/power management
+  xset s off
+  xset s noblank
+  xset -dpms
+
+# Start a terminal
+xterm &
+
+
+Start a GUI program at bootup
+::
+
+  sudo nano /etc/xdg/openbox/autostart
+
+Add the full path of the program followed by a space and an ampersand
+::
+
+  /home/john/bin/coop &
+
+Ctrl x the y then enter to save
+
+Reboot and your program should start at boot up.
+
+Disable X11 screen blanking
+::
+
+	xset s off
+	xset s noblank
+	xset dpms 0 0 0
+	xset -dpms
+
+Check whether the screen blanking has been disabled with this command:
+::
+	xset q
