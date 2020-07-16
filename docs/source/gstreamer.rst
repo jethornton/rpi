@@ -65,6 +65,14 @@ Recheck the ALSA modules
 
 Now the USB speakers are the default
 
+sudo nano /usr/share/alsa/alsa.conf
+
+defaults.ctl.card 0
+
+defaults.pcm.card 0
+
+Change both “0” to “1” and then save the file.
+
 Test the speakers are set to default with the built in speaker-test.
 ::
 

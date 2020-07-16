@@ -73,12 +73,16 @@ Setup the User
 At the Rpi log in as user pi with the password raspberry
 
 If you have another PC connected to a LAN you can now work from that PC via SSH.
-At the Rpi type in `ifconfig` to find out the IP address of the Rpi.
+At the Rpi type in `hostname -I` to find out the IP address of the Rpi.
+
+To SSH from another Linux PC on the LAN
+::
+
+  ssh pi@192.168.n.nnn replace n's with your Rpi's address
 
 If not using SSH then you will have to do this on the Rpi.
 ::
 
-  ssh pi@192.168.n.nnn replace n's with your Rpi's address
   sudo adduser pia
 
 set the password and press enter until you get the is this correct then y
@@ -125,8 +129,8 @@ Reboot the Rpi
 
 On the Rpi log in as your new user name
 
-If your doing this from another Linux PC with the same user name ssh back in as
-you by just using the IP address
+If your doing this from another Linux PC with the same user name ssh
+back in as you by just using the IP address
 ::
 
   ssh 192.168.n.nnn
@@ -271,42 +275,8 @@ to include your bin directory. Look for /home/your name/bin in the path
   echo $PATH
   /home/john/bin:/usr/local/sbin:... lots of paths
 
-Right click and the menu pops up. Press Ctrl + Alt + Right or Left Arrow keys
-to switch desktops.
-
-Turn off screen blanking by X11
-On the Rpi issue the following command
-::
-
-  xset -dpms s off
-
-To turn off screen blanking
-
-Edit the autostart file
-::
-
-  sudo nano /etc/xdg/openbox/autostart
-::
-
-  mkdir ~/.config/openbox
-  nano ~/.config/openbox/environment
-
-Put the following in the environment file
-::
-
- xset -dpms s off &
-
-Create .config/openbox/autostart containing:
-::
-
-  # Disable screen saver/screen blanking/power management
-  xset s off
-  xset s noblank
-  xset -dpms
-
-# Start a terminal
-xterm &
-
+Right click and the menu pops up. Press Ctrl + Alt + Right or Left Arrow
+keys to switch desktops. Alt Tab to switch between running programs.
 
 Start a GUI program at bootup
 ::
@@ -322,7 +292,38 @@ Ctrl x the y then enter to save
 
 Reboot and your program should start at boot up.
 
-Disable X11 screen blanking
+To completely disable DPMS X11 screen blanking, add the following to a
+file in /etc/X11/xorg.conf.d/10-monitor.conf
+
+First check to see if the directory `/etc/X11/xorg.conf.d` exists with
+::
+
+	ls /etc/X11
+
+If xorg.conf.d is not there create it with
+::
+
+	sudo mkdir /etc/X11/xorg.conf.d
+
+Now create the file 10-monitor.conf
+::
+
+	sudo nano /etc/X11/xorg.conf.d/10-monitor.conf
+
+Add the following
+::
+	Section "ServerFlags"
+			Option "BlankTime" "0"
+			Option "StandbyTime" "0"
+			Option "SuspendTime" "0"
+			Option "OffTime" "0"
+			Option "NoPM" "true"
+	EndSection
+
+Ctrl x then y then enter to save the file
+Reboot
+
+Disable 
 ::
 
 	xset s off
@@ -330,6 +331,8 @@ Disable X11 screen blanking
 	xset dpms 0 0 0
 	xset -dpms
 
-Check whether the screen blanking has been disabled with this command:
+Check whether the screen blanking has been disabled with this command on
+the Rpi not via SSH:
 ::
+
 	xset q
