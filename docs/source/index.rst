@@ -19,6 +19,7 @@ Raspberry Pi Configuration
 
    pyqt5
    gstreamer
+   nginx
 
 Indices and tables
 ==================
