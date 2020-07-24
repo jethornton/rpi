@@ -30,6 +30,8 @@ If your using a Debian based OS you can install and have it on the menu.
   sudo apt-get update
   sudo apt-get install balena-etcher-electron
 
+* Burn the image to the SD card with Etcher
+
 Insert the SD card and connect a mouse, keyboard and monitor to the Raspberry Pi
 and boot up. After the screen stops scrolling you will need to log in. The user
 name is `pi` and the password is `raspberry`. At this point you have an
