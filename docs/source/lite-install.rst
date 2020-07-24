@@ -279,9 +279,12 @@ Right click and the menu pops up. Press Ctrl + Alt + Right or Left Arrow
 keys to switch desktops. Alt Tab to switch between running programs.
 
 Start a GUI program at bootup
+-----------------------------
+
+Add an `autostart` file
 ::
 
-  sudo nano /etc/xdg/openbox/autostart
+	sudo nano /etc/xdg/openbox/autostart
 
 Add the full path of the program followed by a space and an ampersand
 ::
@@ -291,6 +294,9 @@ Add the full path of the program followed by a space and an ampersand
 Ctrl x the y then enter to save
 
 Reboot and your program should start at boot up.
+
+Disable DPMS Screen Blanking
+----------------------------
 
 To completely disable DPMS X11 screen blanking, add the following to a
 file in /etc/X11/xorg.conf.d/10-monitor.conf
@@ -312,6 +318,7 @@ Now create the file 10-monitor.conf
 
 Add the following
 ::
+
 	Section "ServerFlags"
 			Option "BlankTime" "0"
 			Option "StandbyTime" "0"
