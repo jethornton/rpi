@@ -187,6 +187,38 @@ Change the following lines to the address you want and remove the #
 
 Ctrl x then y then enter to save. Reboot to apply and log back in at the Rpi.
 
+User bin Directory
+------------------
+
+To add a bin directory and make .bashrc add that to the path so any
+executables you place in the /home/username/bin will run from the
+command line or as a program you need to edit the /home/username/.bashrc
+file. From the users home directory open a terminal and do the following.
+::
+
+	ls -a
+
+If bin is not there add it
+::
+
+	mkdir bin
+	nano .bashrc
+
+Add the following to the end of the file
+::
+
+	# set PATH so it includes user's private bin if it exists
+	if [ -d "$HOME/bin" ] ; then
+			PATH="$HOME/bin:$PATH"
+	fi
+
+	# set PATH so it includes user's private bin if it exists
+	if [ -d "$HOME/.local/bin" ] ; then
+			PATH="$HOME/.local/bin:$PATH"
+	fi
+
+Press Ctrl X then y then enter to save the changes
+
 Install OpenBox
 ---------------
 
