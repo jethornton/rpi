@@ -202,7 +202,7 @@ If bin is not there add it
 ::
 
 	mkdir bin
-	nano .bashrc
+	nano ~/.bashrc
 
 Add the following to the end of the file
 ::
