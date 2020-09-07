@@ -3,7 +3,7 @@ Raspberry Pi OS Lite
 ====================
 
 To get a minimal install of Raspberry Pi OS download the 
-`Raspberry Pi OS (32-bit) Lite <https://www.raspberrypi.org/downloads/raspberry-pi-os/>`_
+`Raspberry Pi OS (32-bit) Lite <https://downloads.raspberrypi.org/raspios_lite_armhf_latest>`_
 image.
 
 Burn the image to the SD card with `balenaEtcher <https://www.balena.io/etcher/>`_
@@ -40,7 +40,8 @@ Operating System (OS) but nothing else.
 Setting up the Raspberry Pi OS
 ------------------------------
 
-First some settings need to be changed using raspi-config so type in
+First some settings need to be changed using raspi-config. After booting
+up open a terminal and type in the following.
 ::
 
   sudo raspi-config
