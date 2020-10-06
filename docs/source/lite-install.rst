@@ -350,3 +350,15 @@ the Rpi not via SSH:
 ::
 
 	xset q
+
+Auto Login
+----------
+
+To automaticly log in to the console
+::
+
+	sudo raspi-config
+
+Select "Boot Options".
+Select "Desktop/CLI"
+Select "Console Autologin"
