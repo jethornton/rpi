@@ -38,4 +38,12 @@ corner then select `Preferences` then `Raspberry Pi Configuration`
    * Auto login disabled
    * Network at Boot Wait for network
    * Splash Screen up to you, I turn it off
-* 
+* Interfaces
+   * SSH Enable
+   * VNC up to you
+
+Click `Ok` and reboot
+
+You can continue on the Rpi or log in with SSH from either a Linux PC in
+a terminal or a Windoze PC using PuTTy.
+
