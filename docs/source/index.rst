@@ -10,8 +10,10 @@ Raspberry Pi Configuration
    :maxdepth: 1
    :caption: Operating Systems:
 
-   install
-   lite-install
+   install-10L
+   install-10D
+   install-10DF
+   install-9D
 
 .. toctree::
    :maxdepth: 1

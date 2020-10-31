@@ -53,19 +53,22 @@ as needed for your country.
 2 Network Options
   * Hostname set the name you want to be visible on the LAN
 
-1 Localisation Options
+4 Localisation Options
   * Change Locale to `en_US ISO8859-1` tab to Ok and press Enter
   * Default Locale `en_US` tab to Ok and press Enter
-
   * Time Zone, Select US then your time zone.
-
+  * Change Keyboard Layout
+     * Generic 104-key PC
+     * Other, then English (US)
+     * The default for the keyboard layout
+     * No Compose key
   * Change WLAN Country to US
 
-4 Interfacing Options Enable the following
+5 Interfacing Options Enable the following
   * SSH
-  * 1-Wire
+  * Optionally 1-Wire if you plan on using it
 
-4 Advanced Options
+7 Advanced Options
   * Expand File System
 
 Finish and Reboot
@@ -151,6 +154,15 @@ Update everything
   sudo apt dist-upgrade
   sudo apt clean
 
+You can now setup auto login
+::
+
+  sudo raspi-config
+
+3 Boot Options
+  * Desktop/CLI
+     * Console Autologin
+
 At this point we have an up to date OS with nothing else.
 
 Static IP Address
@@ -235,21 +247,15 @@ Install Openbox LXTerminal LightDM
 
   sudo apt install openbox lxterminal lightdm
 
-Setup auto login
+Auto Login
 ::
 
-  sudo nano /etc/lightdm/lightdm.conf
+  sudo raspi-config
 
-Scroll down to the section [Seat:\*] and change these two lines
-::
+* 3 Boot Options
+   * B1 Desktop / CLI
+       * B4 Desktop Autologin Desktop GUI
 
-  #autologin-user=
-  #autologin-user-timeout=0
-
-  autologin-user=your user name
-  autologin-user-timeout=0
-
-Ctrl x then y then enter to save
 
 Install the OpenBox menu configuration tool which must be ran on the Rpi4 and not from SSH
 ::
@@ -350,15 +356,3 @@ the Rpi not via SSH:
 ::
 
 	xset q
-
-Auto Login
-----------
-
-To automaticly log in to the console
-::
-
-	sudo raspi-config
-
-Select "Boot Options".
-Select "Desktop/CLI"
-Select "Console Autologin"

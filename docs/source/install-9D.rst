@@ -5,7 +5,7 @@ Raspberry Pi OS w/Desktop
 Download Raspberry Pi OS (32-bit) with desktop and recommended software
 `here <https://www.raspberrypi.org/downloads/raspberry-pi-os/>`_
 
-Burn the image to the SD card with either
+Flash the image to the SD card with either
 `balenaEtcher <https://www.balena.io/etcher/>`_ or use the
 `Raspberry Pi Imager <https://www.raspberrypi.org/downloads/>`_ for the OS that
 you have on your PC.
