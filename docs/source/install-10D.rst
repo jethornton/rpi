@@ -34,4 +34,8 @@ After the Rpi boots back up click on the Raspberry in the upper left
 corner then select `Preferences` then `Raspberry Pi Configuration`
 
 * System Tab
-   * Set the Hostname
+   * Set the Hostname you want to use
+   * Auto login disabled
+   * Network at Boot Wait for network
+   * Splash Screen up to you, I turn it off
+* 
