@@ -22,7 +22,6 @@ Raspberry Pi Configuration
    pyqt5
    gstreamer
    nginx
-   backup
 
 Indices and tables
 ==================

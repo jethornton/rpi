@@ -14,10 +14,24 @@ OS that you have on your PC.
 Connect a mouse, keyboard and monitor to the Raspberry Pi and boot up.
 
 When you boot up to the desktop you get the welcome screen, you might
-want to write down the IP address if your going to use SSH later. Click
-on `Next` then set the country, language, time zone and check off use
-English language and keyboard the press `Next`. Skip setting a new
-password for user `pi` we will replace that slice of pi later with your
-user name so just press `Next`. On the next screen usually you just
-press `Next`. You can either setup a wireless network or skip it. Update
-the software press `Next` to update.
+want to write down the IP address if your going to use SSH later.
+
+Click on `Next` then set the country, language, time zone and check off
+use English language and keyboard the press `Next`.
+
+Skip setting a new password for user `pi` we will replace that slice of
+pi later with your user name so just press `Next`.
+
+On the next screen usually you just press `Next`.
+
+You can either setup a wireless network or skip it.
+
+Update the software page press `Next` to update.
+
+After the update click `Restart`
+
+After the Rpi boots back up click on the Raspberry in the upper left
+corner then select `Preferences` then `Raspberry Pi Configuration`
+
+* System Tab
+   * Set the Hostname
