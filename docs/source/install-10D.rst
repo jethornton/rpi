@@ -19,8 +19,7 @@ want to write down the IP address if your going to use SSH later.
 Click on `Next` then set the country, language, time zone and check off
 use English language and keyboard the press `Next`.
 
-Skip setting a new password for user `pi` we will replace that slice of
-pi later with your user name so just press `Next`.
+Set the password you want to use and press `Next`.
 
 On the next screen usually you just press `Next`.
 
@@ -35,7 +34,6 @@ corner then select `Preferences` then `Raspberry Pi Configuration`
 
 * System Tab
    * Set the Hostname you want to use
-   * Auto login disabled
    * Network at Boot Wait for network
    * Splash Screen up to you, I turn it off
 * Interfaces
@@ -44,6 +42,30 @@ corner then select `Preferences` then `Raspberry Pi Configuration`
 
 Click `Ok` and reboot
 
-You can continue on the Rpi or log in with SSH from either a Linux PC in
-a terminal or a Windoze PC using PuTTy.
+You can continue on the Rpi in a terminal or log in with SSH from either
+a Linux PC in a terminal or a Windoze PC using PuTTy. On the Rpi the
+terminal is the black square thing in the upper left corner so click on
+that and do the following to change the user name and password. First
+add a root password of your choice but don't forget it.
+::
 
+  sudo passwd root
+
+Set the password then logout and login as root using the password you
+set.
+
+Change the user name with `usermod -l newname pi` I'll use john as the
+newname
+::
+
+  usermod -l john pi
+
+
+Update everything
+::
+
+  sudo apt update
+  sudo apt dist-upgrade
+  sudo apt clean
+
+You can now setup auto login
