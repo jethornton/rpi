@@ -129,6 +129,9 @@ executables you place in the /home/username/bin will run from the
 command line or as a program you need to edit the /home/username/.bashrc
 file. Open the file manager and click on `View` then `Show Hidden`.
 
+.. image:: images/bin-01.png
+   :align: center
+
 Create a new folder called `bin` then double click on the .bashrc file
 to open it up in the editor.
 
@@ -144,3 +147,24 @@ Add the following to the end of the file
 	if [ -d "$HOME/.local/bin" ] ; then
 			PATH="$HOME/.local/bin:$PATH"
 	fi
+
+Reboot again so this will take effect. To test that it works open the
+file manager and create a file in the bin directory called `howdy`.
+Double click to open it in the editor and add the following.
+::
+
+	#!/usr/bin/python3
+	
+	print('Howdy')
+
+Save and close the editor. Then in the file manager right click on the
+file `howdy` and in the `Permissions` tab select an option for `Execute`
+
+.. image:: images/bin-02.png
+   :align: center
+
+Open a terminal and type in `howdy` and press enter and your program
+will run and print `Howdy` in the terminal.
+
+.. image:: images/bin-03.png
+   :align: center
