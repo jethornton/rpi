@@ -45,46 +45,102 @@ Update the software page press `Next` to update.
 .. image:: images/welcome-06.png
    :align: center
 
-After the update click `Restart`
+After the update click `Ok`
 
 .. image:: images/welcome-07.png
    :align: center
 
-After the Rpi boots back up click on the Raspberry in the upper left
-corner then select `Preferences` then `Raspberry Pi Configuration`
+Then click `Restart`
+
+.. image:: images/welcome-08.png
+   :align: center
+
+Setup a temporary user, in a terminal do the following
+::
+
+  sudo adduser temp
+  sudo adduser temp sudo
+
+.. image:: images/temp-user-01.png
+   :align: center
+
+Click on the Raspberry in the upper left corner then select
+`Preferences` then `Raspberry Pi Configuration`
 
 * System Tab
    * Set the Hostname you want to use
+   * Turn off auto login
    * Network at Boot Wait for network
    * Splash Screen up to you, I turn it off
+
+.. image:: images/config-01.png
+   :align: center
+
 * Interfaces
    * SSH Enable
    * VNC up to you
 
-Click `Ok` and reboot
+.. image:: images/config-02.png
+   :align: center
 
-You can continue on the Rpi in a terminal or log in with SSH from either
-a Linux PC in a terminal or a Windoze PC using PuTTy. On the Rpi the
-terminal is the black square thing in the upper left corner so click on
-that and do the following to change the user name and password. First
-add a root password of your choice but don't forget it.
+Click `Ok` and reboot and log in as `temp` or whatever name you used.
+
+Change the user name of pi to your user name in my case it's john
+sudo usermod -l newUsername oldUsername
 ::
 
-  sudo passwd root
+  sudo usermod -l john pi
 
-Set the password then reboot and login as root using the password you
-set.
+Change the home directory name to your name again for me it's john
 
-Change the user name with `usermod -l newname pi` I'll use john as the
-newname
+sudo usermod -d /home/newHomeDir -m newUsername
 ::
 
-  usermod -l john pi
+  sudo usermod -d /home/john -m john
 
-Reboot and login as the new user
+.. image:: images/user-mod-02.png
+   :align: center
+
+Reboot and log back in as your new user, for me it's john.
+
+Delete temporary user and folder
+::
+
+  sudo deluser temp
+  sudo rm -r /home/temp
+
+.. image:: images/temp-user-02.png
+   :align: center
 
 You can now setup auto login in `Raspberry Pi Configuration`, don't
 it says auto login for pi it also says auto login for default user which
 is you now.
 
+.. image:: images/user-mod-03.png
+   :align: center
 
+Now if you reboot it will automaticly login as you.
+
+User bin Directory
+------------------
+
+To add a bin directory and make .bashrc add that to the path so any
+executables you place in the /home/username/bin will run from the
+command line or as a program you need to edit the /home/username/.bashrc
+file. Open the file manager and click on `View` then `Show Hidden`.
+
+Create a new folder called `bin` then double click on the .bashrc file
+to open it up in the editor.
+
+Add the following to the end of the file
+::
+
+	# set PATH so it includes user's private bin if it exists
+	if [ -d "$HOME/bin" ] ; then
+			PATH="$HOME/bin:$PATH"
+	fi
+
+	# set PATH so it includes user's private bin if it exists
+	if [ -d "$HOME/.local/bin" ] ; then
+			PATH="$HOME/.local/bin:$PATH"
+	fi
