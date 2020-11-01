@@ -14,20 +14,41 @@ OS that you have on your PC.
 Connect a mouse, keyboard and monitor to the Raspberry Pi and boot up.
 
 When you boot up to the desktop you get the welcome screen, you might
-want to write down the IP address if your going to use SSH later.
+want to write down the IP address if your going to use SSH or VNC later.
+
+.. image:: images/welcome-01.png
+   :align: center
 
 Click on `Next` then set the country, language, time zone and check off
 use English language and keyboard the press `Next`.
 
+.. image:: images/welcome-02.png
+   :align: center
+
 Set the password you want to use and press `Next`.
+
+.. image:: images/welcome-03.png
+   :align: center
 
 On the next screen usually you just press `Next`.
 
+.. image:: images/welcome-04.png
+   :align: center
+
 You can either setup a wireless network or skip it.
+
+.. image:: images/welcome-05.png
+   :align: center
 
 Update the software page press `Next` to update.
 
+.. image:: images/welcome-06.png
+   :align: center
+
 After the update click `Restart`
+
+.. image:: images/welcome-07.png
+   :align: center
 
 After the Rpi boots back up click on the Raspberry in the upper left
 corner then select `Preferences` then `Raspberry Pi Configuration`
@@ -51,7 +72,7 @@ add a root password of your choice but don't forget it.
 
   sudo passwd root
 
-Set the password then logout and login as root using the password you
+Set the password then reboot and login as root using the password you
 set.
 
 Change the user name with `usermod -l newname pi` I'll use john as the
@@ -60,12 +81,10 @@ newname
 
   usermod -l john pi
 
+Reboot and login as the new user
 
-Update everything
-::
+You can now setup auto login in `Raspberry Pi Configuration`, don't
+it says auto login for pi it also says auto login for default user which
+is you now.
 
-  sudo apt update
-  sudo apt dist-upgrade
-  sudo apt clean
 
-You can now setup auto login
