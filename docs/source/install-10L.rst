@@ -41,7 +41,7 @@ Setting up the Raspberry Pi OS
 ------------------------------
 
 First some settings need to be changed using raspi-config. After booting
-up open a terminal and type in the following.
+up and logging in type in the following.
 ::
 
   sudo raspi-config
@@ -159,9 +159,11 @@ You can now setup auto login
 
   sudo raspi-config
 
-3 Boot Options
-  * Desktop/CLI
-     * Console Autologin
+1 System Options
+  S5 Boot / auto Login
+     B2 Console Autologin
+
+Finish and Reboot
 
 At this point we have an up to date OS with nothing else.
 
