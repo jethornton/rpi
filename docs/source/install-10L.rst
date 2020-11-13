@@ -6,6 +6,8 @@ To get a minimal install of Raspberry Pi OS download the
 `Raspberry Pi OS (32-bit) Lite <https://downloads.raspberrypi.org/raspios_lite_armhf_latest>`_
 image.
 
+This tutorial is done using `2020-08-20-raspios-buster-armhf-lite.zip`
+
 Burn the image to the SD card with `balenaEtcher <https://www.balena.io/etcher/>`_
 
 
@@ -50,25 +52,31 @@ Use the Up/Down arrow keys to move in a menu and the tab key to move between
 menus and the spacebar to select options. The following are for the US, adjust
 as needed for your country.
 
-2 Network Options
+* Network Options
+
   * Hostname set the name you want to be visible on the LAN
 
-4 Localisation Options
-  * Change Locale to `en_US ISO8859-1` tab to Ok and press Enter
-  * Default Locale `en_US` tab to Ok and press Enter
+* Localisation Options
+
+  * Change Locale to en_US ISO8859-1 tab to Ok and press Enter
+  * Default Locale en_US tab to Ok and press Enter
   * Time Zone, Select US then your time zone.
   * Change Keyboard Layout
-     * Generic 104-key PC
-     * Other, then English (US)
-     * The default for the keyboard layout
-     * No Compose key
+
+    * Generic 104-key PC
+    * Other, then English (US)
+    * English (US) for the keyboard layout
+    * The default for the keyboard layout
+    * No Compose key
+
   * Change WLAN Country to US
 
-5 Interfacing Options Enable the following
-  * SSH
-  * Optionally 1-Wire if you plan on using it
+* Interfacing Options Enable the following
 
-7 Advanced Options
+  * SSH
+
+* Advanced Options
+
   * Expand File System
 
 Finish and Reboot
