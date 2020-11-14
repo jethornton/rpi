@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Raspberry Pi OS 10 Desktop &mdash; Raspberry Pi 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Raspberry Pi OS 10 Desktop Full" href="install-10DF.html" />
+    <link rel="prev" title="Raspberry Pi OS Lite" href="install-10L.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Raspberry Pi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Operating Systems:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install-10L.html">Raspberry Pi OS Lite</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Raspberry Pi OS 10 Desktop</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#user-bin-directory">User bin Directory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install-10DF.html">Raspberry Pi OS 10 Desktop Full</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-9D.html">Raspberry Pi OS w/Desktop</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyqt5.html">PyQt5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gstreamer.html">Gstreamer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nginx.html">NGINX Web Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clone.html">Backup and Restore</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Raspberry Pi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Raspberry Pi OS 10 Desktop</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/install-10D.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="raspberry-pi-os-10-desktop">
+<h1>Raspberry Pi OS 10 Desktop<a class="headerlink" href="#raspberry-pi-os-10-desktop" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial is done using 2020-08-20-raspios-buster-armf.zip or better
+known as Raspberry Pi OS (32-bit) with desktop from
+<a class="reference external" href="https://www.raspberrypi.org/downloads/raspberry-pi-os/">here</a></p>
+<p>Flash the image to the SD card with either
+<a class="reference external" href="https://www.balena.io/etcher/">balenaEtcher</a> or use the
+<a class="reference external" href="https://www.raspberrypi.org/downloads/">Raspberry Pi Imager</a> for the
+OS that you have on your PC.</p>
+<p>Connect a mouse, keyboard and monitor to the Raspberry Pi and boot up.</p>
+<p>When you boot up to the desktop you get the welcome screen, you might
+want to write down the IP address if your going to use SSH or VNC later.</p>
+<img alt="_images/welcome-01.png" class="align-center" src="_images/welcome-01.png" />
+<p>Click on <cite>Next</cite> then set the country, language, time zone and check off
+use English language and keyboard the press <cite>Next</cite>.</p>
+<img alt="_images/welcome-02.png" class="align-center" src="_images/welcome-02.png" />
+<p>Set the password you want to use and press <cite>Next</cite>.</p>
+<img alt="_images/welcome-03.png" class="align-center" src="_images/welcome-03.png" />
+<p>On the next screen usually you just press <cite>Next</cite>.</p>
+<img alt="_images/welcome-04.png" class="align-center" src="_images/welcome-04.png" />
+<p>You can either setup a wireless network or skip it.</p>
+<img alt="_images/welcome-05.png" class="align-center" src="_images/welcome-05.png" />
+<p>Update the software page press <cite>Next</cite> to update.</p>
+<img alt="_images/welcome-06.png" class="align-center" src="_images/welcome-06.png" />
+<p>After the update click <cite>Ok</cite></p>
+<img alt="_images/welcome-07.png" class="align-center" src="_images/welcome-07.png" />
+<p>Then click <cite>Restart</cite></p>
+<img alt="_images/welcome-08.png" class="align-center" src="_images/welcome-08.png" />
+<p>Setup a temporary user, in a terminal do the following</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">adduser</span> <span class="n">temp</span>
+<span class="n">sudo</span> <span class="n">adduser</span> <span class="n">temp</span> <span class="n">sudo</span>
+</pre></div>
+</div>
+<img alt="_images/temp-user-01.png" class="align-center" src="_images/temp-user-01.png" />
+<p>Click on the Raspberry in the upper left corner then select
+<cite>Preferences</cite> then <cite>Raspberry Pi Configuration</cite></p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>System Tab</dt><dd><ul>
+<li><p>Set the Hostname you want to use</p></li>
+<li><p>Turn off auto login</p></li>
+<li><p>Network at Boot Wait for network</p></li>
+<li><p>Splash Screen up to you, I turn it off</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="_images/config-01.png" class="align-center" src="_images/config-01.png" />
+<ul class="simple">
+<li><dl class="simple">
+<dt>Interfaces</dt><dd><ul>
+<li><p>SSH Enable</p></li>
+<li><p>VNC up to you</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<img alt="_images/config-02.png" class="align-center" src="_images/config-02.png" />
+<p>Click <cite>Ok</cite> and reboot and log in as <cite>temp</cite> or whatever name you used.</p>
+<p>Change the user name of pi to your user name in my case it’s john
+sudo usermod -l newUsername oldUsername</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">usermod</span> <span class="o">-</span><span class="n">l</span> <span class="n">john</span> <span class="n">pi</span>
+</pre></div>
+</div>
+<p>Change the home directory name to your name again for me it’s john</p>
+<p>sudo usermod -d /home/newHomeDir -m newUsername</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">usermod</span> <span class="o">-</span><span class="n">d</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">john</span> <span class="o">-</span><span class="n">m</span> <span class="n">john</span>
+</pre></div>
+</div>
+<img alt="_images/user-mod-02.png" class="align-center" src="_images/user-mod-02.png" />
+<p>Reboot and log back in as your new user, for me it’s john.</p>
+<p>Delete temporary user and folder</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">deluser</span> <span class="n">temp</span>
+<span class="n">sudo</span> <span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">temp</span>
+</pre></div>
+</div>
+<img alt="_images/temp-user-02.png" class="align-center" src="_images/temp-user-02.png" />
+<p>You can now setup auto login in <cite>Raspberry Pi Configuration</cite>, don’t
+it says auto login for pi it also says auto login for default user which
+is you now.</p>
+<img alt="_images/user-mod-03.png" class="align-center" src="_images/user-mod-03.png" />
+<p>Now if you reboot it will automaticly login as you.</p>
+<div class="section" id="user-bin-directory">
+<h2>User bin Directory<a class="headerlink" href="#user-bin-directory" title="Permalink to this headline">¶</a></h2>
+<p>To add a bin directory and make .bashrc add that to the path so any
+executables you place in the /home/username/bin will run from the
+command line or as a program you need to edit the /home/username/.bashrc
+file. Open the file manager and click on <cite>View</cite> then <cite>Show Hidden</cite>.</p>
+<img alt="_images/bin-01.png" class="align-center" src="_images/bin-01.png" />
+<p>Create a new folder called <cite>bin</cite> then double click on the .bashrc file
+to open it up in the editor.</p>
+<p>Add the following to the end of the file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># set PATH so it includes user&#39;s private bin if it exists</span>
+<span class="k">if</span> <span class="p">[</span> <span class="o">-</span><span class="n">d</span> <span class="s2">&quot;$HOME/bin&quot;</span> <span class="p">]</span> <span class="p">;</span> <span class="n">then</span>
+                <span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;$HOME/bin:$PATH&quot;</span>
+<span class="n">fi</span>
+
+<span class="c1"># set PATH so it includes user&#39;s private bin if it exists</span>
+<span class="k">if</span> <span class="p">[</span> <span class="o">-</span><span class="n">d</span> <span class="s2">&quot;$HOME/.local/bin&quot;</span> <span class="p">]</span> <span class="p">;</span> <span class="n">then</span>
+                <span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;$HOME/.local/bin:$PATH&quot;</span>
+<span class="n">fi</span>
+</pre></div>
+</div>
+<p>Reboot again so this will take effect. To test that it works open the
+file manager and create a file in the bin directory called <cite>howdy</cite>.
+Double click to open it in the editor and add the following.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python3</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Howdy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Save and close the editor. Then in the file manager right click on the
+file <cite>howdy</cite> and in the <cite>Permissions</cite> tab select an option for <cite>Execute</cite></p>
+<img alt="_images/bin-02.png" class="align-center" src="_images/bin-02.png" />
+<p>Open a terminal and type in <cite>howdy</cite> and press enter and your program
+will run and print <cite>Howdy</cite> in the terminal.</p>
+<img alt="_images/bin-03.png" class="align-center" src="_images/bin-03.png" />
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="install-10DF.html" class="btn btn-neutral float-right" title="Raspberry Pi OS 10 Desktop Full" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="install-10L.html" class="btn btn-neutral float-left" title="Raspberry Pi OS Lite" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, John Thornton
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

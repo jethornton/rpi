@@ -1,0 +1,578 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Raspberry Pi OS Lite &mdash; Raspberry Pi 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Raspberry Pi OS 10 Desktop" href="install-10D.html" />
+    <link rel="prev" title="Raspberry Pi Configuration" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Raspberry Pi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Operating Systems:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Raspberry Pi OS Lite</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-the-raspberry-pi-os">Setting up the Raspberry Pi OS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setup-the-user">Setup the User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#static-ip-address">Static IP Address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#user-bin-directory">User bin Directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#install-openbox">Install OpenBox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#start-a-gui-program-at-bootup">Start a GUI program at bootup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#disable-dpms-screen-blanking">Disable DPMS Screen Blanking</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="install-10D.html">Raspberry Pi OS 10 Desktop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-10DF.html">Raspberry Pi OS 10 Desktop Full</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install-9D.html">Raspberry Pi OS w/Desktop</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pyqt5.html">PyQt5</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gstreamer.html">Gstreamer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nginx.html">NGINX Web Server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clone.html">Backup and Restore</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Raspberry Pi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Raspberry Pi OS Lite</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/install-10L.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="raspberry-pi-os-lite">
+<h1>Raspberry Pi OS Lite<a class="headerlink" href="#raspberry-pi-os-lite" title="Permalink to this headline">¶</a></h1>
+<p>To get a minimal install of Raspberry Pi OS download the
+<a class="reference external" href="https://downloads.raspberrypi.org/raspios_lite_armhf_latest">Raspberry Pi OS (32-bit) Lite</a>
+image.</p>
+<p>This tutorial is done using <cite>2020-08-20-raspios-buster-armhf-lite.zip</cite></p>
+<p>Burn the image to the SD card with <a class="reference external" href="https://www.balena.io/etcher/">balenaEtcher</a></p>
+<p>If your using a Debian based OS you can install and have it on the menu.</p>
+<ul class="simple">
+<li><p>Add Etcher debian repository</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">echo</span> <span class="s2">&quot;deb https://deb.etcher.io stable etcher&quot;</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">tee</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">balena</span><span class="o">-</span><span class="n">etcher</span><span class="o">.</span><span class="n">list</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Trust Bintray.com’s GPG key</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">key</span> <span class="n">adv</span> <span class="o">--</span><span class="n">keyserver</span> <span class="n">hkps</span><span class="p">:</span><span class="o">//</span><span class="n">keyserver</span><span class="o">.</span><span class="n">ubuntu</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="mi">443</span> <span class="o">--</span><span class="n">recv</span><span class="o">-</span><span class="n">keys</span> <span class="mi">379</span><span class="n">CE192D401AB61</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Update and install</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">balena</span><span class="o">-</span><span class="n">etcher</span><span class="o">-</span><span class="n">electron</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Burn the image to the SD card with Etcher</p></li>
+</ul>
+<p>Insert the SD card and connect a mouse, keyboard and monitor to the Raspberry Pi
+and boot up. After the screen stops scrolling you will need to log in. The user
+name is <cite>pi</cite> and the password is <cite>raspberry</cite>. At this point you have an
+Operating System (OS) but nothing else.</p>
+<div class="section" id="setting-up-the-raspberry-pi-os">
+<h2>Setting up the Raspberry Pi OS<a class="headerlink" href="#setting-up-the-raspberry-pi-os" title="Permalink to this headline">¶</a></h2>
+<p>First some settings need to be changed using raspi-config. After booting
+up and logging in type in the following.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">raspi</span><span class="o">-</span><span class="n">config</span>
+</pre></div>
+</div>
+<p>Use the Up/Down arrow keys to move in a menu and the tab key to move between
+menus and the spacebar to select options. The following are for the US, adjust
+as needed for your country.</p>
+<ul class="simple">
+<li><p>Network Options</p>
+<ul>
+<li><p>Hostname set the name you want to be visible on the LAN</p></li>
+</ul>
+</li>
+<li><p>Localisation Options</p>
+<ul>
+<li><p>Change Locale to en_US ISO8859-1 tab to Ok and press Enter</p></li>
+<li><p>Default Locale en_US tab to Ok and press Enter</p></li>
+<li><p>Time Zone, Select US then your time zone.</p></li>
+<li><p>Change Keyboard Layout</p>
+<ul>
+<li><p>Generic 104-key PC</p></li>
+<li><p>Other, then English (US)</p></li>
+<li><p>English (US) for the keyboard layout</p></li>
+<li><p>The default for the keyboard layout</p></li>
+<li><p>No Compose key</p></li>
+</ul>
+</li>
+<li><p>Change WLAN Country to US</p></li>
+</ul>
+</li>
+<li><p>Interfacing Options Enable the following</p>
+<ul>
+<li><p>SSH</p></li>
+</ul>
+</li>
+<li><p>Advanced Options</p>
+<ul>
+<li><p>Expand File System</p></li>
+</ul>
+</li>
+</ul>
+<p>Finish and Reboot</p>
+</div>
+<div class="section" id="setup-the-user">
+<h2>Setup the User<a class="headerlink" href="#setup-the-user" title="Permalink to this headline">¶</a></h2>
+<p>To change the user from pi to yourself you first have to create a
+temporary user and log in as that user. You can’t change pi while logged
+in as pi.</p>
+<p>At the Rpi log in as user pi with the password raspberry</p>
+<p>If you have another PC connected to a LAN you can now work from that PC via SSH.
+At the Rpi type in <cite>hostname -I</cite> to find out the IP address of the Rpi.</p>
+<p>To SSH from another Linux PC on the LAN</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">pi</span><span class="o">@</span><span class="mf">192.168</span><span class="o">.</span><span class="n">n</span><span class="o">.</span><span class="n">nnn</span> <span class="n">replace</span> <span class="n">n</span><span class="s1">&#39;s with your Rpi&#39;</span><span class="n">s</span> <span class="n">address</span>
+</pre></div>
+</div>
+<p>If not using SSH then you will have to do this on the Rpi.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">adduser</span> <span class="n">pia</span>
+</pre></div>
+</div>
+<p>set the password and press enter until you get the is this correct then y</p>
+<p>Allow the new user to run sudo by adding the user to sudo group:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">adduser</span> <span class="n">pia</span> <span class="n">sudo</span>
+</pre></div>
+</div>
+<p>Reboot the Rpi</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">reboot</span>
+</pre></div>
+</div>
+<p>On the Rpi log in as pia with your password</p>
+<p>If your doing this from another PC on the LAN ssh back in as pia</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="n">pia</span><span class="o">@</span><span class="mf">192.168</span><span class="o">.</span><span class="n">n</span><span class="o">.</span><span class="n">nnn</span>
+</pre></div>
+</div>
+<p>Change the user name of pi to your user name in my case it’s john
+sudo usermod -l newUsername oldUsername</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">usermod</span> <span class="o">-</span><span class="n">l</span> <span class="n">john</span> <span class="n">pi</span>
+</pre></div>
+</div>
+<p>Change the home directory name to your name again for me it’s john</p>
+<p>sudo usermod -d /home/newHomeDir -m newUsername</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">usermod</span> <span class="o">-</span><span class="n">d</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">john</span> <span class="o">-</span><span class="n">m</span> <span class="n">john</span>
+</pre></div>
+</div>
+<p>Update the password to your favorite password</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">passwd</span> <span class="n">john</span>
+</pre></div>
+</div>
+<p>Reboot the Rpi</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">reboot</span>
+</pre></div>
+</div>
+<p>On the Rpi log in as your new user name</p>
+<p>If your doing this from another Linux PC with the same user name ssh
+back in as you by just using the IP address</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span> <span class="mf">192.168</span><span class="o">.</span><span class="n">n</span><span class="o">.</span><span class="n">nnn</span>
+</pre></div>
+</div>
+<p>Delete temporary user and folder</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">deluser</span> <span class="n">pia</span>
+<span class="n">sudo</span> <span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">pia</span>
+</pre></div>
+</div>
+<p>Update everything</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">dist</span><span class="o">-</span><span class="n">upgrade</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<p>You can now setup auto login</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">raspi</span><span class="o">-</span><span class="n">config</span>
+</pre></div>
+</div>
+<ul>
+<li><p>System Options</p>
+<ul>
+<li><p>Boot / auto Login</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Console Autologin</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>Finish and Reboot</p>
+<p>At this point we have an up to date OS with nothing else.</p>
+</div>
+<div class="section" id="static-ip-address">
+<h2>Static IP Address<a class="headerlink" href="#static-ip-address" title="Permalink to this headline">¶</a></h2>
+<p>If you want to have the same IP address on the Rpi</p>
+<p>Find the IP of the router with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ip</span> <span class="n">r</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">default</span>
+<span class="n">default</span> <span class="n">via</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.1</span> <span class="n">dev</span> <span class="n">enp5s0</span> <span class="n">proto</span> <span class="n">dhcp</span> <span class="n">metric</span> <span class="mi">100</span>
+</pre></div>
+</div>
+<p>Now edit dhcpcd.conf</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">dhcpcd</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
+<p>Change the following lines to the address you want and remove the #</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example static IP configuration:</span>
+<span class="c1">#interface eth0</span>
+<span class="c1">#static ip_address=192.168.0.10/24</span>
+<span class="c1">#static ip6_address=fd51:42f8:caae:d92e::ff/64</span>
+<span class="c1">#static routers=192.168.0.1</span>
+<span class="c1">#static domain_name_servers=192.168.0.1 8.8.8.8 fd51:42f8:caae:d92e::1</span>
+
+<span class="c1"># Example static IP configuration:</span>
+<span class="n">interface</span> <span class="n">eth0</span>
+<span class="n">static</span> <span class="n">ip_address</span><span class="o">=</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">1.135</span><span class="o">/</span><span class="mi">24</span>
+<span class="c1">#static ip6_address=fd51:42f8:caae:d92e::ff/64</span>
+<span class="n">static</span> <span class="n">routers</span><span class="o">=</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">1.1</span>
+<span class="c1">#static domain_name_servers=192.168.0.1 8.8.8.8 fd51:42f8:caae:d92e::1</span>
+</pre></div>
+</div>
+<p>Ctrl x then y then enter to save. Reboot to apply and log back in at the Rpi.</p>
+</div>
+<div class="section" id="user-bin-directory">
+<h2>User bin Directory<a class="headerlink" href="#user-bin-directory" title="Permalink to this headline">¶</a></h2>
+<p>To add a bin directory and make .bashrc add that to the path so any
+executables you place in the /home/username/bin will run from the
+command line or as a program you need to edit the /home/username/.bashrc
+file. From the users home directory open a terminal and do the following.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+</div>
+<p>If bin is not there add it</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mkdir</span> <span class="nb">bin</span>
+<span class="n">nano</span> <span class="o">~/.</span><span class="n">bashrc</span>
+</pre></div>
+</div>
+<p>Add the following to the end of the file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># set PATH so it includes user&#39;s private bin if it exists</span>
+<span class="k">if</span> <span class="p">[</span> <span class="o">-</span><span class="n">d</span> <span class="s2">&quot;$HOME/bin&quot;</span> <span class="p">]</span> <span class="p">;</span> <span class="n">then</span>
+                <span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;$HOME/bin:$PATH&quot;</span>
+<span class="n">fi</span>
+
+<span class="c1"># set PATH so it includes user&#39;s private bin if it exists</span>
+<span class="k">if</span> <span class="p">[</span> <span class="o">-</span><span class="n">d</span> <span class="s2">&quot;$HOME/.local/bin&quot;</span> <span class="p">]</span> <span class="p">;</span> <span class="n">then</span>
+                <span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;$HOME/.local/bin:$PATH&quot;</span>
+<span class="n">fi</span>
+</pre></div>
+</div>
+<p>Press Ctrl X then y then enter to save the changes</p>
+</div>
+<div class="section" id="install-openbox">
+<h2>Install OpenBox<a class="headerlink" href="#install-openbox" title="Permalink to this headline">¶</a></h2>
+<p>From either a SSH connection or on the Rpi.</p>
+<p>Install Xorg, Xinit and X11 Utilities</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">recommends</span> <span class="n">xserver</span><span class="o">-</span><span class="n">xorg</span> <span class="n">xinit</span> <span class="n">x11</span><span class="o">-</span><span class="n">xserver</span><span class="o">-</span><span class="n">utils</span>
+</pre></div>
+</div>
+<p>Install Openbox LXTerminal LightDM</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">openbox</span> <span class="n">lxterminal</span> <span class="n">lightdm</span>
+</pre></div>
+</div>
+<p>Auto Login</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">raspi</span><span class="o">-</span><span class="n">config</span>
+</pre></div>
+</div>
+<ul>
+<li><p>System Options</p>
+<ul>
+<li><p>Boot / Auto Login</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Desktop Autologin Desktop GUI</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>Finish and Reboot</p>
+<p>Install the OpenBox menu configuration tool which must be ran on the Rpi4 and not from SSH</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">obmenu</span>
+</pre></div>
+</div>
+<p>Remove any unused packages with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">autoremove</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">clean</span>
+</pre></div>
+</div>
+<p>While we are cleaning up lets delete all the empty directories with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">find</span> <span class="o">.</span> <span class="o">-</span><span class="nb">type</span> <span class="n">d</span> <span class="o">-</span><span class="n">empty</span> <span class="o">-</span><span class="n">delete</span>
+</pre></div>
+</div>
+<p>Finally reboot and the Rpi should log you in automaticly.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">reboot</span>
+</pre></div>
+</div>
+<p>After the reboot you will be at a completly blank screen if your logged in.</p>
+<p>Right click in the Rpi to open a terminal and test that you have the path set
+to include your bin directory. Look for /home/your name/bin in the path</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo $PATH
+/home/john/bin:/usr/local/sbin:... lots of paths
+</pre></div>
+</div>
+<p>Right click and the menu pops up. Press Ctrl + Alt + Right or Left Arrow
+keys to switch desktops. Alt Tab to switch between running programs.</p>
+</div>
+<div class="section" id="start-a-gui-program-at-bootup">
+<h2>Start a GUI program at bootup<a class="headerlink" href="#start-a-gui-program-at-bootup" title="Permalink to this headline">¶</a></h2>
+<p>Add an <cite>autostart</cite> file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">xdg</span><span class="o">/</span><span class="n">openbox</span><span class="o">/</span><span class="n">autostart</span>
+</pre></div>
+</div>
+<p>Add the full path of the program followed by a space and an ampersand</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">john</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">coop</span> <span class="o">&amp;</span>
+</pre></div>
+</div>
+<p>Ctrl x the y then enter to save</p>
+<p>Reboot and your program should start at boot up.</p>
+</div>
+<div class="section" id="disable-dpms-screen-blanking">
+<h2>Disable DPMS Screen Blanking<a class="headerlink" href="#disable-dpms-screen-blanking" title="Permalink to this headline">¶</a></h2>
+<p>To completely disable DPMS X11 screen blanking, add the following to a
+file in /etc/X11/xorg.conf.d/10-monitor.conf</p>
+<p>First check to see if the directory <cite>/etc/X11/xorg.conf.d</cite> exists with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">X11</span>
+</pre></div>
+</div>
+<p>If xorg.conf.d is not there create it with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">X11</span><span class="o">/</span><span class="n">xorg</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">d</span>
+</pre></div>
+</div>
+<p>Now create the file 10-monitor.conf</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">nano</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">X11</span><span class="o">/</span><span class="n">xorg</span><span class="o">.</span><span class="n">conf</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="mi">10</span><span class="o">-</span><span class="n">monitor</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
+<p>Add the following</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Section</span> <span class="s2">&quot;ServerFlags&quot;</span>
+                <span class="n">Option</span> <span class="s2">&quot;BlankTime&quot;</span> <span class="s2">&quot;0&quot;</span>
+                <span class="n">Option</span> <span class="s2">&quot;StandbyTime&quot;</span> <span class="s2">&quot;0&quot;</span>
+                <span class="n">Option</span> <span class="s2">&quot;SuspendTime&quot;</span> <span class="s2">&quot;0&quot;</span>
+                <span class="n">Option</span> <span class="s2">&quot;OffTime&quot;</span> <span class="s2">&quot;0&quot;</span>
+                <span class="n">Option</span> <span class="s2">&quot;NoPM&quot;</span> <span class="s2">&quot;true&quot;</span>
+<span class="n">EndSection</span>
+</pre></div>
+</div>
+<p>Ctrl x then y then enter to save the file
+Reboot</p>
+<p>Check whether the screen blanking has been disabled with this command on
+the Rpi not via SSH:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xset</span> <span class="n">q</span>
+</pre></div>
+</div>
+<p>To be able to login without having to type in a password you need to
+create a SSH key and copy it to the remote PC.</p>
+<p>ssh-keygen creates the public and private keys. ssh-copy-id copies the
+local-host’s public key to the remote-host’s authorized_keys file.
+ssh-copy-id also assigns proper permission to the remote-host’s home,
+~/.ssh, and ~/.ssh/authorized_keys.</p>
+<p>First see if you already have a SSH key on the local PC with the
+following command.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">al</span> <span class="o">~/.</span><span class="n">ssh</span><span class="o">/</span><span class="n">id_</span><span class="o">*.</span><span class="n">pub</span>
+</pre></div>
+</div>
+<p>If you have a key skip to the next step if not create one now with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span>
+</pre></div>
+</div>
+<p>Copy the key to the remote PC with the following command assuming both
+PC’s have the same user name. Change the IP address to match your remote
+PC’s IP address</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">copy</span><span class="o">-</span><span class="nb">id</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">1.140</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="install-10D.html" class="btn btn-neutral float-right" title="Raspberry Pi OS 10 Desktop" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Raspberry Pi Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, John Thornton
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
