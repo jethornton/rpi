@@ -363,14 +363,6 @@ Add the following
 Ctrl x then y then enter to save the file
 Reboot
 
-Disable 
-::
-
-	xset s off
-	xset s noblank
-	xset dpms 0 0 0
-	xset -dpms
-
 Check whether the screen blanking has been disabled with this command on
 the Rpi not via SSH:
 ::
