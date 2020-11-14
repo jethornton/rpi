@@ -368,3 +368,30 @@ the Rpi not via SSH:
 ::
 
 	xset q
+
+To be able to login without having to type in a password you need to
+create a SSH key and copy it to the remote PC.
+
+ssh-keygen creates the public and private keys. ssh-copy-id copies the
+local-host’s public key to the remote-host’s authorized_keys file.
+ssh-copy-id also assigns proper permission to the remote-host’s home,
+~/.ssh, and ~/.ssh/authorized_keys.
+
+
+First see if you already have a SSH key on the local PC with the
+following command.
+::
+
+	ls -al ~/.ssh/id_*.pub
+
+If you have a key skip to the next step if not create one now with
+::
+
+	ssh-keygen
+
+Copy the key to the remote PC with the following command assuming both
+PC's have the same user name. Change the IP address to match your remote
+PC's IP address
+::
+
+	ssh-copy-id 192.168.1.140
