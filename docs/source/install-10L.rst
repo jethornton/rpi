@@ -84,6 +84,10 @@ Finish and Reboot
 Setup the User
 --------------
 
+To change the user from pi to yourself you first have to create a
+temporary user and log in as that user. You can't change pi while logged
+in as pi.
+
 At the Rpi log in as user pi with the password raspberry
 
 If you have another PC connected to a LAN you can now work from that PC via SSH.
@@ -167,9 +171,11 @@ You can now setup auto login
 
   sudo raspi-config
 
-1 System Options
-  S5 Boot / auto Login
-     B2 Console Autologin
+* System Options
+
+  * Boot / auto Login
+
+     * Console Autologin
 
 Finish and Reboot
 
@@ -262,9 +268,13 @@ Auto Login
 
   sudo raspi-config
 
-* 3 Boot Options
-   * B1 Desktop / CLI
-       * B4 Desktop Autologin Desktop GUI
+* System Options
+
+  * Boot / Auto Login
+
+     * Desktop Autologin Desktop GUI
+
+Finish and Reboot
 
 
 Install the OpenBox menu configuration tool which must be ran on the Rpi4 and not from SSH
